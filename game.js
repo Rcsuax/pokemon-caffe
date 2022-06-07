@@ -38,7 +38,7 @@ function game(pokemon1, pokemon2) {
         }
         else {
             first = pokemon2
-            second = pokemons1
+            second = pokemon1
         }
         
         // pokemon hp = hp - (attack - defence)
