@@ -1,30 +1,42 @@
 console.log("Welcome to the wonderful world of pokemon caffe");
 
 const canvas = document.getElementById("canvas")
+const ctx = canvas.getContext("2d")
 
-class Pokemon {
-    constructor(name, hp, spe, atk) {
-        this.name = name;
-        this.hp = hp;
-        this.spe = spe;
-        this.atk = atk;
-    }
+const ui = document.querySelector('#user-interface')
+const startButton = document.querySelector('#start-game')
 
-    attack(target) {
-        console.log(`${this.name} is attacking ${target.name}`)
-        target.hp = target.hp - this.atk
-    }
+startButton.addEventListener('click', () => {
+    game(p1, p1)
+})
+
+const p1  = new Pokemon('assets/pikachu.png', 'pikachu', 200, 250, 250, 250, 100, 10, 10)
+
+function drawBackground() {
+    const backgroundImage = new Image(canvas.width, canvas.height)
+    backgroundImage.src = 'assets/battleBackground.png'
+    
+    ctx.drawImage(backgroundImage, 0, 0)
 }
 
+function draw() {
+    window.requestAnimationFrame(draw)
+    
+    drawBackground()
 
-const p1  = new Pokemon("pikachu", 100, 10, 10)
-const p2 = new Pokemon("squirtle", 100, 5, 10)
-const p3 = new Pokemon("charmander", 100, 7, 12)
+    ui.innerHTML = `
+        <p>${ p1.name }</p>
+        <p>${ p1.hp }</p>
+    `
+    p1.draw()
+}
+
+draw()
+
 
 
 let gameState = true
 let turns = 0
-
 
 function game(pokemon1, pokemon2) {
     while (gameState) {
@@ -60,5 +72,3 @@ function game(pokemon1, pokemon2) {
         turns++
     }
 }
-
-game(p1, p2)
