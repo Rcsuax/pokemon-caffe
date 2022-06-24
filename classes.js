@@ -8,7 +8,11 @@ class Sprite {
         this.height = height
 
         this.image = new Image()
-        this.image.src = src
+        this.image.src = src[0]
+    }
+    
+    swap() {
+        this.image.sec = src[1]
     }
     
     draw() {

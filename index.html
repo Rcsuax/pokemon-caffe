@@ -1,18 +1,48 @@
 
-<canvas id="canvas" width="1024" height="600"></canvas>
+<div style="
+    display: inline-flex;
+    position: relative;
+    flex-direction: column;
+    /* width: 100%; */
+">
+    <canvas id="canvas" width="1024" height="600"></canvas>
+    
+    <div id="ui-1" 
+        style="
+            position: absolute; 
+            top: 20%;
+            left: 20%; 
+            background-color: green; 
+            width: 200px;
+    "></div>
+    
+    <div id="ui-2" 
+        style="
+            position: absolute; 
+            bottom: 20%;
+            right: 20%; 
+            background-color: green; 
+            width: 200px;
+    "></div>
 
-<div id="user-interface" 
-    style="
-    position: absolute; 
-    bottom: 500px;
-    right: 500px; 
-    background-color: green; 
-    width: 200px;
-    ">
+    <div style="
+        display: flex;
+        flex-direction: row;
+        margin: auto;
+        ">
+
+        <button id="start-game" style="width: 200px; height: 100px;">Start Battle </button>
+        <button id="move-1" style="width: 200px; height: 100px;">Move 1</button>
+        <button id="move-2" style="width: 200px; height: 100px;">Move 2</button>
+        <button id="move-3" style="width: 200px; height: 100px;">Move 3</button>
+        <button id="end-game" style="width: 200px; height: 100px;">End Turn</button>
+    </div>
+
 </div>
-<button id="start-game" style="width: 200px; height: 100px;">
-    Start Battle
-</button>
+
+
+
+
 
 <script src="./classes.js"></script>
 <script src="./game.js"></script>

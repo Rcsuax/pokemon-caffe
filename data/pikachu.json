@@ -1,0 +1,9 @@
+{
+    "name": "Pikachu",
+    "type": "Electric",
+    "HP": 35,
+    "Attack": 55,
+    "Defense": 40,
+    "Speed": 90,
+    "image": "../images/pikachu.png"
+}
