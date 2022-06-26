@@ -1,18 +1,14 @@
-
+// classes.js
 class Sprite {
-    
-    constructor(src, x, y, width, height ) {
+    constructor(sprites, x, y, width, height ) {
         this.x = x
         this.y = y
         this.width = width
         this.height = height
 
+        this.sprites = sprites
         this.image = new Image()
-        this.image.src = src[0]
-    }
-    
-    swap() {
-        this.image.sec = src[1]
+        this.image.src = sprites[0]
     }
     
     draw() {
@@ -29,6 +25,24 @@ class Pokemon extends Sprite {
         this.hp = hp;
         this.spe = spe;
         this.atk = atk;
+        this.moves = ['tackle', 'growl', 'barrier', 'intimidate']
+
+        this.spriteIndex = 0 // tracks which sprite to use
+    }
+
+    getHTML() {
+        return `<p>${ this.name }</p> <p>${ this.hp }</p>`
+    }
+
+    swap() {
+        this.spriteIndex++
+        
+        if (this.spriteIndex % 2 == 0 ) {
+            this.image.src = this.sprites[0]
+        }
+        else {
+            this.image.src = this.sprites[1]
+        }
     }
 
     attack(target) {
