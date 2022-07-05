@@ -9,6 +9,8 @@ class Sprite {
         this.sprites = sprites
         this.image = new Image()
         this.image.src = sprites[0]
+
+        this.spriteIndex = 0 // tracks which sprite to use
     }
     
     draw() {
@@ -26,8 +28,6 @@ class Pokemon extends Sprite {
         this.spe = spe;
         this.atk = atk;
         this.moves = ['tackle', 'growl', 'barrier', 'intimidate']
-
-        this.spriteIndex = 0 // tracks which sprite to use
     }
 
     getHTML() {
@@ -41,7 +41,7 @@ class Pokemon extends Sprite {
             this.image.src = this.sprites[0]
         }
         else {
-            this.image.src = this.sprites[1]
+            this.image.src = this.sprites[1] 
         }
     }
 
